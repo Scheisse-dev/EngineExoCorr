@@ -1,0 +1,12 @@
+"GameObject" : {
+	"components" :  [
+			"Transform" : {
+			"enabled" : "true",
+			"position" : "(25, 500)"
+		},
+			"PlayerComponent" : {
+			"enabled" : "false"
+		}
+	],
+	"name" : "Hello"
+}

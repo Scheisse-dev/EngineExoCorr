@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CB215A46-638A-45D5-8669-4EECD20AEA04}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>EngineExo</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>../SFML-2.5.1/include;../O3DLibrary/O3DLibrary;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../SFML-2.5.1/lib;../O3DLibrary/$(IntDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies> sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;$(CoreLibraryDependencies);O3DLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy /y /d "D:\Cours\O3DLibrary\$(IntDir)O3DLibrary.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>../SFML-2.5.1/include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../SFML-2.5.1/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies> sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1  -path $(ProjectDir)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="EngineExo.cpp" />
+    <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp" />
+    <ClCompile Include="Engine\A\A.cpp" />
+    <ClCompile Include="Engine\Component\Component.cpp" />
+    <ClCompile Include="Engine\Editor\Asset\AssetWindow.cpp" />
+    <ClCompile Include="Engine\Editor\Editor.cpp" />
+    <ClCompile Include="Engine\Editor\Inspector\InspectorWindow.cpp" />
+    <ClCompile Include="Engine\Editor\Window\EditorWindow.cpp" />
+    <ClCompile Include="Engine\Exception\Exception.cpp" />
+    <ClCompile Include="Engine\GameObject\GameObject.cpp" />
+    <ClCompile Include="Engine\IO\File.cpp" />
+    <ClCompile Include="Engine\Manager\EventSystem\EventSystem.cpp" />
+    <ClCompile Include="Engine\Manager\FontManager.cpp" />
+    <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
+    <ClCompile Include="Engine\Manager\Texture\TextureManager.cpp" />
+    <ClCompile Include="Engine\Object\Object.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Boolean\Boolean.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Double\Double.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Float\Float.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Integer\Integer.cpp" />
+    <ClCompile Include="Engine\PrimaryType\String\String.cpp" />
+    <ClCompile Include="Engine\PrimaryType\ValueType\ValueType.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Vector\Vector2.cpp" />
+    <ClCompile Include="Engine\Reflection\Field\FieldInfo.cpp" />
+    <ClCompile Include="Engine\Reflection\Function\Function.cpp" />
+    <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp" />
+    <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp" />
+    <ClCompile Include="Engine\Selection\Selection.cpp" />
+    <ClCompile Include="Engine\Transform\Transform.cpp" />
+    <ClCompile Include="Engine\UI\AssetButton\AssetButton.cpp" />
+    <ClCompile Include="Engine\UI\Button\Button.cpp" />
+    <ClCompile Include="Engine\UI\Element\UIElement.cpp" />
+    <ClCompile Include="Engine\UI\Label\Label.cpp" />
+    <ClCompile Include="Engine\UI\Slider\Slider.cpp" />
+    <ClCompile Include="Engine\UI\TextField\TextField.cpp" />
+    <ClCompile Include="Engine\UI\Toggle\Toggle.cpp" />
+    <ClCompile Include="Engine\Utils\Console\Console.cpp" />
+    <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
+    <ClCompile Include="Test\Component\PlayerComponent.cpp" />
+    <ClCompile Include="Test\PrimaryType\Double\DoubleTest.cpp" />
+    <ClCompile Include="Test\PrimaryType\Float\FloatTest.cpp" />
+    <ClCompile Include="Test\PrimaryType\Integer\IntegerTest.cpp" />
+    <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
+    <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Assembly.h" />
+    <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h" />
+    <ClInclude Include="Engine\A\A.h" />
+    <ClInclude Include="Engine\Component\Component.h" />
+    <ClInclude Include="Engine\Editor\Asset\AssetWindow.h" />
+    <ClInclude Include="Engine\Editor\Editor.h" />
+    <ClInclude Include="Engine\Editor\Inspector\InspectorWindow.h" />
+    <ClInclude Include="Engine\Editor\Window\EditorWindow.h" />
+    <ClInclude Include="Engine\Event\Action\ActionInternal.h" />
+    <ClInclude Include="Engine\Event\Delegate\Delegate.h" />
+    <ClInclude Include="Engine\Exception\Exception.h" />
+    <ClInclude Include="Engine\GameObject\GameObject.h" />
+    <ClInclude Include="Engine\IO\File.h" />
+    <ClInclude Include="Engine\Manager\EventSystem\EventSystem.h" />
+    <ClInclude Include="Engine\Manager\FontManager.h" />
+    <ClInclude Include="Engine\Manager\GameObject\GameObjectManager.h" />
+    <ClInclude Include="Engine\Manager\Texture\TextureManager.h" />
+    <ClInclude Include="Engine\Object\Object.h" />
+    <ClInclude Include="Engine\PrimaryType\Boolean\Boolean.h" />
+    <ClInclude Include="Engine\PrimaryType\Double\Double.h" />
+    <ClInclude Include="Engine\PrimaryType\Enum\Enum.h" />
+    <ClInclude Include="Engine\PrimaryType\Float\Float.h" />
+    <ClInclude Include="Engine\PrimaryType\Integer\Integer.h" />
+    <ClInclude Include="Engine\PrimaryType\List\IList.h" />
+    <ClInclude Include="Engine\PrimaryType\List\List.h" />
+    <ClInclude Include="Engine\PrimaryType\String\String.h" />
+    <ClInclude Include="Engine\PrimaryType\ValueType\ValueType.h" />
+    <ClInclude Include="Engine\PrimaryType\Vector\Vector2.h" />
+    <ClInclude Include="Engine\Reflection\Field\FieldInfo.h" />
+    <ClInclude Include="Engine\Reflection\Flags\BindingFlag.h" />
+    <ClInclude Include="Engine\Reflection\Function\Function.h" />
+    <ClInclude Include="Engine\Reflection\Function\MethodInfo\MethodInfo.h" />
+    <ClInclude Include="Engine\Reflection\Function\Parameter\ParameterInfo.h" />
+    <ClInclude Include="Engine\Selection\Selection.h" />
+    <ClInclude Include="Engine\Time\Time.h" />
+    <ClInclude Include="Engine\Transform\Transform.h" />
+    <ClInclude Include="Engine\UI\AssetButton\AssetButton.h" />
+    <ClInclude Include="Engine\UI\Button\Button.h" />
+    <ClInclude Include="Engine\UI\Element\UIElement.h" />
+    <ClInclude Include="Engine\UI\Interface\IPointerClickHandler.h" />
+    <ClInclude Include="Engine\UI\Interface\IPointerEnterHandler.h" />
+    <ClInclude Include="Engine\UI\Interface\IPointerExitHandler.h" />
+    <ClInclude Include="Engine\UI\Interface\IPointerMoveHandler.h" />
+    <ClInclude Include="Engine\UI\Interface\ITextEntered.h" />
+    <ClInclude Include="Engine\UI\Label\Label.h" />
+    <ClInclude Include="Engine\UI\Slider\Slider.h" />
+    <ClInclude Include="Engine\UI\TextField\TextField.h" />
+    <ClInclude Include="Engine\UI\Toggle\Toggle.h" />
+    <ClInclude Include="Engine\Utils\Console\Console.h" />
+    <ClInclude Include="Engine\Utils\CoreDefine.h" />
+    <ClInclude Include="Engine\Utils\DebugMacro.h" />
+    <ClInclude Include="Engine\Utils\Interface\Log\ILogger.h" />
+    <ClInclude Include="Engine\Utils\ObjectMacro.h" />
+    <ClInclude Include="Engine\Utils\Singleton\Singleton.h" />
+    <ClInclude Include="Engine\Utils\Template\Pointer.h" />
+    <ClInclude Include="Engine\Utils\Template\Template.h" />
+    <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
+    <ClInclude Include="Engine\Window\Window.h" />
+    <ClInclude Include="Test\Component\PlayerComponent.h" />
+    <ClInclude Include="Test\PrimaryType\Double\DoubleTest.h" />
+    <ClInclude Include="Test\PrimaryType\Float\FloatTest.h" />
+    <ClInclude Include="Test\PrimaryType\Integer\IntegerTest.h" />
+    <ClInclude Include="Test\PrimaryType\List\ListTest.h" />
+    <ClInclude Include="Test\Reflection\Json\JsonTest.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
